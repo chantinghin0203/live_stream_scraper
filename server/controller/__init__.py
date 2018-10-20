@@ -6,6 +6,7 @@ api = Api(
     title='Live Stream scraper',
     version='1.0',
     description='Happy scraping',
+    doc='/document'
 )
 
 api.add_namespace(ns_football)
