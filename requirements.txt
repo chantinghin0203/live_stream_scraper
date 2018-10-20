@@ -4,4 +4,4 @@ itsdangerous
 Jinja2
 requests
 flask-restplus
-beautifulsoup4
+bs4
