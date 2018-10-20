@@ -2,66 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fe228c9-1404-4dba-bb1c-d64619a60366" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/favicon-16x16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/favicon-32x32.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/files/.npmignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/files/droid-sans-latin-400.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/files/droid-sans-latin-400.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/files/droid-sans-latin-700.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/files/droid-sans-latin-700.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/application_config.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/.idea/flask_restplus.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/__about__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/_http.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/api.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/apidoc.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/cors.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/errors.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/fields.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/inputs.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/marshalling.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/mask.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/model.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/namespace.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/postman.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/representations.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/reqparse.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/resource.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/schemas/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/schemas/oas-2.0.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/droid-sans.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/oauth2-redirect.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/swagger-ui-bundle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/swagger-ui-bundle.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/swagger-ui-standalone-preset.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/swagger-ui-standalone-preset.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/swagger-ui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/swagger-ui.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/swagger-ui.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/swagger-ui.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/theme-feeling-blue.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/theme-flattop.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/theme-material.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/theme-monokai.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/theme-muted.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/theme-newspaper.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/static/theme-outline.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/swagger.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/templates/swagger-ui-css.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/templates/swagger-ui-libs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/templates/swagger-ui.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controller/swagger/flask_restplus/utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.py" afterPath="$PROJECT_DIR$/app.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controller/__init__.py" afterPath="$PROJECT_DIR$/server/controller/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controller/football_livestream.py" afterPath="$PROJECT_DIR$/server/controller/football_livestream.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controller/index.py" afterPath="$PROJECT_DIR$/server/controller/index.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/live_stream_scraper.py" afterPath="$PROJECT_DIR$/server/live_stream_scraper.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -156,7 +97,7 @@
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+              <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -207,12 +148,12 @@
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/server/controller/index.py" />
         <option value="$PROJECT_DIR$/server/controller/football_livestream.py" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/server/controller/__init__.py" />
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/application_config.py" />
         <option value="$PROJECT_DIR$/server/application_config.py" />
         <option value="$PROJECT_DIR$/server/live_stream_scraper.py" />
+        <option value="$PROJECT_DIR$/app.py" />
       </list>
     </option>
   </component>
@@ -674,7 +615,7 @@
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
