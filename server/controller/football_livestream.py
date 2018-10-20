@@ -1,8 +1,10 @@
-from flask import Blueprint
+from flask_restplus import Resource, Namespace
 
-api = Blueprint("Index", __name__, url_prefix="/football")
+# api = Blueprint("Index", __name__, url_prefix="/football")
+ns_football = Namespace("football")
 
 
-@api.route("/", methods=["GET"])
-def index():
-    return "football works"
+@ns_football.route('/get_user_info')
+class Football(Resource):
+    def get(self):
+        return "football works"
