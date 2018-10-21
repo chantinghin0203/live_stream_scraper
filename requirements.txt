@@ -5,3 +5,4 @@ Jinja2
 requests
 flask-restplus
 bs4
+praw

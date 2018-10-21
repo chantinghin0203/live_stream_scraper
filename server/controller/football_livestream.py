@@ -2,6 +2,8 @@ from urllib.request import urlopen
 import time
 from bs4 import BeautifulSoup
 from flask_restplus import Resource, Namespace
+import praw
+from server.models.Link import Link
 
 ns_football = Namespace("football")
 
@@ -24,6 +26,7 @@ class Football(Resource):
         return stream_links
 
     def get_data_from_reddit(self):
+        soup = None
         for i in range(20):
             try:
                 soup = BeautifulSoup(urlopen(Football.URL), "html.parser")
@@ -32,3 +35,28 @@ class Football(Resource):
                 print(e)
                 time.sleep(1)
         return soup
+
+
+@ns_football.route('/get-stream-list-praw')
+class FootballPraw(Resource):
+    reddit = praw.Reddit(client_id='CpHzcp8gb5w6Uw',
+                         client_secret='jh5baagLN1j0kdFaMACIhYDGFC4',
+                         user_agent='stream-scraper')
+
+    def get(self):
+        stream_list = {}
+        for submission in FootballPraw.reddit.subreddit('soccerstreams').hot(limit=20):
+            if "VS" in submission.title.upper():
+                stream_list[submission.title] = []
+                for comments in submission.comments.list():
+                    soup = BeautifulSoup(comments.body_html, "html.parser")
+                    stream_description = soup.find("p")
+                    stream_link = soup.find("a")
+                    link_dict = {"link": stream_link.get_attribute_list("href")[0],
+                                 "description": stream_description.text}
+                    link = Link()
+                    link.description = stream_description.text
+                    link.link = stream_link.get_attribute_list("href")[0]
+                    stream_list[submission.title].append([link_dict])
+                    print(stream_list)
+        return stream_list
