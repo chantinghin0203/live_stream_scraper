@@ -49,14 +49,19 @@ class FootballPraw(Resource):
             if "VS" in submission.title.upper():
                 stream_list[submission.title] = []
                 for comments in submission.comments.list():
-                    soup = BeautifulSoup(comments.body_html, "html.parser")
-                    stream_description = soup.find("p")
-                    stream_link = soup.find("a")
-                    link_dict = {"link": stream_link.get_attribute_list("href")[0],
-                                 "description": stream_description.text}
-                    link = Link()
-                    link.description = stream_description.text
-                    link.link = stream_link.get_attribute_list("href")[0]
-                    stream_list[submission.title].append([link_dict])
-                    print(stream_list)
+                    link_dict = self.extract_links_and_info(comments)
+                    if link_dict:
+                        stream_list[submission.title].append([link_dict])
+                        print(stream_list)
         return stream_list
+
+    def extract_links_and_info(self, comments) -> {}:
+        soup = BeautifulSoup(comments.body_html, "html.parser")
+        stream_description = soup.find("p")
+        if stream_description:
+            stream_link = soup.find("a")
+            if stream_link:
+                link_dict = {"link": stream_link.get_attribute_list("href")[0],
+                             "description": stream_description.text}
+                return link_dict
+        return None
