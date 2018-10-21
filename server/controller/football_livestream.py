@@ -1,9 +1,9 @@
-from urllib.request import urlopen
 import time
+from urllib.request import urlopen
+
+import praw
 from bs4 import BeautifulSoup
 from flask_restplus import Resource, Namespace
-import praw
-from server.models.Link import Link
 
 ns_football = Namespace("football")
 

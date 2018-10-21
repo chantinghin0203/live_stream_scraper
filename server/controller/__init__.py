@@ -1,5 +1,6 @@
 from server.controller.football_livestream import ns_football
 from server.controller.index import ns_index
+from server.controller.nba_livestream import ns_nba
 from flask_restplus import Api
 
 api = Api(
@@ -10,5 +11,6 @@ api = Api(
 )
 
 api.add_namespace(ns_football)
+api.add_namespace(ns_nba)
 api.add_namespace(ns_index)
 
