@@ -13,4 +13,3 @@ api = Api(
 api.add_namespace(ns_football)
 api.add_namespace(ns_nba)
 api.add_namespace(ns_index)
-
