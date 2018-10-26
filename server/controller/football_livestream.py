@@ -2,6 +2,7 @@ import time
 from urllib.request import urlopen
 
 import praw
+from praw.models.reddit import comment
 from bs4 import BeautifulSoup
 from flask_restplus import Resource, Namespace
 
@@ -56,12 +57,13 @@ class FootballPraw(Resource):
         return stream_list
 
     def extract_links_and_info(self, comments) -> {}:
-        soup = BeautifulSoup(comments.body_html, "html.parser")
-        stream_description = soup.find("p")
-        if stream_description:
-            stream_link = soup.find("a")
-            if stream_link:
-                link_dict = {"link": stream_link.get_attribute_list("href")[0],
-                             "description": stream_description.text}
-                return link_dict
+        if isinstance(comments, comment.Comment):
+            soup = BeautifulSoup(comments.body_html, "html.parser")
+            stream_description = soup.find("p")
+            if stream_description:
+                stream_link = soup.find("a")
+                if stream_link:
+                    link_dict = {"link": stream_link.get_attribute_list("href")[0],
+                                 "description": stream_description.text}
+                    return link_dict
         return None

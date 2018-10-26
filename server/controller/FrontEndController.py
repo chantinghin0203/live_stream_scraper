@@ -7,4 +7,3 @@ blueprint_ui = Blueprint("ui", __name__, url_prefix="/ui")
 @blueprint_ui.route("/<path:path>")
 def not_found(path):
     return render_template("index.html")
-
