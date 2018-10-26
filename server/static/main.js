@@ -85,7 +85,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<router-outlet>\n</router-outlet>\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<router-outlet>\n</router-outlet>\n<a routerLink=\"/nba\" routerLinkActive=\"active-link\">nba</a>\n<a routerLink=\"/football\" routerLinkActive=\"active-link\">football</a>\n"
 
 /***/ }),
 
