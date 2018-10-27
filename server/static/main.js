@@ -85,7 +85,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<nav mat-tab-nav-bar>\n    <a mat-tab-link [routerLink]=\"['nba']\">nba</a>\n    <a mat-tab-link [routerLink]=\"['football']\">football</a>\n</nav>\n\n\n<router-outlet>\n</router-outlet>\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<nav mat-tab-nav-bar>\n    <a mat-tab-link [routerLink]=\"['nba']\" routerLinkActive #nba=\"routerLinkActive\" [active]=\"nba.isActive\">nba</a>\n    <a mat-tab-link [routerLink]=\"['football']\" routerLinkActive #football=\"routerLinkActive\" [active]=\"football.isActive\">football</a>\n</nav>\n\n\n<router-outlet>\n</router-outlet>\n"
 
 /***/ }),
 
