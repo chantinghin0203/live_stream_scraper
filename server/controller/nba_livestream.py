@@ -20,7 +20,7 @@ class NbaPraw(Resource):
                 for comments in submission.comments.list():
                     link_dict = self.extract_links_and_info(comments)
                     if link_dict:
-                        stream_list[submission.title].append([link_dict])
+                        stream_list[submission.title].append(link_dict)
                         # print(stream_list)
 
         return stream_list
