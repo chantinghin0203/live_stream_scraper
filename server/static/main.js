@@ -143,12 +143,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nba_nba_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./nba/nba.component */ "./src/app/nba/nba.component.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _football_service_football_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./football/service/football.service */ "./src/app/football/service/football.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -171,9 +175,11 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTabsModule"]
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTabsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"]
             ],
-            providers: [],
+            providers: [_football_service_football_service__WEBPACK_IMPORTED_MODULE_8__["FootballService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         })
     ], AppModule);
@@ -191,7 +197,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "table, tr, td {\r\n  border: 1px solid grey;\r\n  border-collapse: collapse;\r\n  padding: 5px;\r\n}\r\n\r\ntable tr:nth-child(odd) {\r\n  background-color: #d6f1f8;\r\n}\r\n\r\ntable tr:nth-child(even) {\r\n  background-color: #ffffff;\r\n}\r\n\r\n#loading-bar-spinner.spinner {\r\n    left: 50%;\r\n    margin-left: -20px;\r\n    top: 50%;\r\n    margin-top: -20px;\r\n    position: absolute;\r\n    z-index: 19 !important;\r\n    -webkit-animation: loading-bar-spinner 400ms linear infinite;\r\n            animation: loading-bar-spinner 400ms linear infinite;\r\n}\r\n\r\n#loading-bar-spinner.spinner .spinner-icon {\r\n    width: 40px;\r\n    height: 40px;\r\n    border:  solid 4px transparent;\r\n    border-top-color:  #00C8B1 !important;\r\n    border-left-color: #00C8B1 !important;\r\n    border-radius: 50%;\r\n}\r\n\r\n@-webkit-keyframes loading-bar-spinner {\r\n  0%   { -webkit-transform: rotate(0deg); transform: rotate(0deg);   transform: rotate(0deg); }\r\n  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); transform: rotate(360deg); }\r\n}\r\n\r\n@keyframes loading-bar-spinner {\r\n  0%   { -webkit-transform: rotate(0deg); transform: rotate(0deg);   transform: rotate(0deg); }\r\n  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); transform: rotate(360deg); }\r\n}\r\n"
 
 /***/ }),
 
@@ -202,7 +208,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  football works!\n</p>\n"
+module.exports = "<div *ngIf=\"haveData  == null;then loadingTemplate else haveDataTemplate\"></div>\n\n<ng-template #haveDataTemplate>\n        <div *ngFor=\"let streanLink of  streamLinks\">\n            <h4>{{ streanLink.title }}</h4>\n            <hr>\n            <table>\n                <thead>\n                <th>Link</th>\n                <th>Description</th>\n                </thead>\n                <tr *ngFor=\"let link of  streanLink.links\">\n                    <td><a href=\"{{ link.link }}\">{{ link.link }}</a></td>\n                    <td>{{ link.description }}</td>\n                </tr>\n            </table>\n        </div>\n</ng-template>\n\n\n<ng-template #loadingTemplate>\n    <!--<img *ngIf=\"haveData == null\" src=\"sample.svg\" class=\"ld ld-surprise\"/>!-->\n    <div id=\"loading-bar-spinner\" class=\"spinner\"><div class=\"spinner-icon\"></div></div>\n</ng-template>\n<h4 *ngIf=\"haveData == false\">No available live now from Reddit</h4>\n"
 
 /***/ }),
 
@@ -217,6 +223,7 @@ module.exports = "<p>\n  football works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FootballComponent", function() { return FootballComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _service_football_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./service/football.service */ "./src/app/football/service/football.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -227,10 +234,30 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var FootballComponent = /** @class */ (function () {
-    function FootballComponent() {
+    function FootballComponent(footballService) {
+        this.footballService = footballService;
+        this.haveData = null;
     }
     FootballComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.streamLinksObs = this.footballService.getStreamLinksFromAPI();
+        console.log(this.streamLinks);
+        this.streamLinksObs.subscribe(function (data) {
+            console.log(data.length);
+            if (data.length != null) {
+                _this.streamLinks = data;
+                _this.haveData = true;
+            }
+            else {
+                _this.haveData = false;
+            }
+            console.log(_this.streamLinks);
+        }, function (err) {
+            console.error(err);
+        }, function () {
+        });
     };
     FootballComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -238,9 +265,52 @@ var FootballComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./football.component.html */ "./src/app/football/football.component.html"),
             styles: [__webpack_require__(/*! ./football.component.css */ "./src/app/football/football.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_service_football_service__WEBPACK_IMPORTED_MODULE_1__["FootballService"]])
     ], FootballComponent);
     return FootballComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/football/service/football.service.ts":
+/*!******************************************************!*\
+  !*** ./src/app/football/service/football.service.ts ***!
+  \******************************************************/
+/*! exports provided: FootballService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FootballService", function() { return FootballService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var FootballService = /** @class */ (function () {
+    function FootballService(httpClient) {
+        this.httpClient = httpClient;
+    }
+    FootballService.prototype.getStreamLinksFromAPI = function () {
+        return this.httpClient.get("/football/get-stream-list-praw");
+    };
+    FootballService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], FootballService);
+    return FootballService;
 }());
 
 
@@ -254,7 +324,7 @@ var FootballComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "table, tr, td {\r\n  border: 1px solid grey;\r\n  border-collapse: collapse;\r\n  padding: 5px;\r\n}\r\n\r\ntable tr:nth-child(odd) {\r\n  background-color: #d6f1f8;\r\n}\r\n\r\ntable tr:nth-child(even) {\r\n  background-color: #ffffff;\r\n}\r\n\r\n#loading-bar-spinner.spinner {\r\n    left: 50%;\r\n    margin-left: -20px;\r\n    top: 50%;\r\n    margin-top: -20px;\r\n    position: absolute;\r\n    z-index: 19 !important;\r\n    -webkit-animation: loading-bar-spinner 400ms linear infinite;\r\n            animation: loading-bar-spinner 400ms linear infinite;\r\n}\r\n\r\n#loading-bar-spinner.spinner .spinner-icon {\r\n    width: 40px;\r\n    height: 40px;\r\n    border:  solid 4px transparent;\r\n    border-top-color:  #00C8B1 !important;\r\n    border-left-color: #00C8B1 !important;\r\n    border-radius: 50%;\r\n}\r\n\r\n@-webkit-keyframes loading-bar-spinner {\r\n  0%   { -webkit-transform: rotate(0deg); transform: rotate(0deg);   transform: rotate(0deg); }\r\n  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); transform: rotate(360deg); }\r\n}\r\n\r\n@keyframes loading-bar-spinner {\r\n  0%   { -webkit-transform: rotate(0deg); transform: rotate(0deg);   transform: rotate(0deg); }\r\n  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); transform: rotate(360deg); }\r\n}\r\n"
 
 /***/ }),
 
@@ -265,7 +335,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  nba works!\n</p>\n"
+module.exports = "<div *ngIf=\"haveData  == null;then loadingTemplate else haveDataTemplate\"></div>\n\n<ng-template #haveDataTemplate>\n        <div *ngFor=\"let streanLink of  streamLinks\">\n            <h4>{{ streanLink.title }}</h4>\n            <hr>\n            <table>\n                <thead>\n                <th>Link</th>\n                <th>Description</th>\n                </thead>\n                <tr *ngFor=\"let link of  streanLink.links\">\n                    <td><a href=\"{{ link.link }}\">{{ link.link }}</a></td>\n                    <td>{{ link.description }}</td>\n                </tr>\n            </table>\n        </div>\n</ng-template>\n\n\n<ng-template #loadingTemplate>\n    <!--<img *ngIf=\"haveData == null\" src=\"sample.svg\" class=\"ld ld-surprise\"/>!-->\n    <div id=\"loading-bar-spinner\" class=\"spinner\"><div class=\"spinner-icon\"></div></div>\n</ng-template>\n<h4 *ngIf=\"haveData == false\">No available live now from Reddit</h4>\n"
 
 /***/ }),
 
@@ -280,6 +350,7 @@ module.exports = "<p>\n  nba works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NbaComponent", function() { return NbaComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _service_nba_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./service/nba.service */ "./src/app/nba/service/nba.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -290,10 +361,30 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var NbaComponent = /** @class */ (function () {
-    function NbaComponent() {
+    function NbaComponent(nbaService) {
+        this.nbaService = nbaService;
+        this.streamLinks = null;
+        this.haveData = null;
     }
     NbaComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.streamLinksObs = this.nbaService.getStreamLinksFromAPI();
+        console.log(this.streamLinks);
+        this.streamLinksObs.subscribe(function (data) {
+            if (data.length != null) {
+                _this.streamLinks = data;
+                _this.haveData = true;
+            }
+            else {
+                _this.haveData = false;
+            }
+        }, function (err) {
+            console.error(err);
+        }, function () {
+            console.log(_this.haveData);
+        });
     };
     NbaComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -301,9 +392,52 @@ var NbaComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./nba.component.html */ "./src/app/nba/nba.component.html"),
             styles: [__webpack_require__(/*! ./nba.component.css */ "./src/app/nba/nba.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_service_nba_service__WEBPACK_IMPORTED_MODULE_1__["NbaService"]])
     ], NbaComponent);
     return NbaComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/nba/service/nba.service.ts":
+/*!********************************************!*\
+  !*** ./src/app/nba/service/nba.service.ts ***!
+  \********************************************/
+/*! exports provided: NbaService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NbaService", function() { return NbaService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var NbaService = /** @class */ (function () {
+    function NbaService(httpClient) {
+        this.httpClient = httpClient;
+    }
+    NbaService.prototype.getStreamLinksFromAPI = function () {
+        return this.httpClient.get("/nba/get-stream-list-praw");
+    };
+    NbaService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], NbaService);
+    return NbaService;
 }());
 
 
@@ -324,7 +458,8 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 var environment = {
-    production: false
+    production: false,
+    apiUrl: '127.0.0.1:5000'
 };
 /*
  * For easier debugging in development mode, you can import the following file
