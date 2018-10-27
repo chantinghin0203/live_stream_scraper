@@ -85,7 +85,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<nav mat-tab-nav-bar>\n    <a mat-tab-link [routerLink]=\"['nba']\" routerLinkActive #nba=\"routerLinkActive\" [active]=\"nba.isActive\">nba</a>\n    <a mat-tab-link [routerLink]=\"['football']\" routerLinkActive #football=\"routerLinkActive\" [active]=\"football.isActive\">football</a>\n</nav>\n\n\n<router-outlet>\n</router-outlet>\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<nav mat-tab-nav-bar>\n    <a mat-tab-link [routerLink]=\"['nba']\" routerLinkActive #nba=\"routerLinkActive\" [active]=\"nba.isActive\">NBA</a>\n    <a mat-tab-link [routerLink]=\"['football']\" routerLinkActive #football=\"routerLinkActive\" [active]=\"football.isActive\">Football</a>\n</nav>\n\n\n<router-outlet>\n</router-outlet>\n"
 
 /***/ }),
 
@@ -208,7 +208,7 @@ module.exports = "table, tr, td {\r\n  border: 1px solid grey;\r\n  border-colla
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"haveData  == null;then loadingTemplate else haveDataTemplate\"></div>\n\n<ng-template #haveDataTemplate>\n        <div *ngFor=\"let streanLink of  streamLinks\">\n            <h4>{{ streanLink.title }}</h4>\n            <hr>\n            <table>\n                <thead>\n                <th>Link</th>\n                <th>Description</th>\n                </thead>\n                <tr *ngFor=\"let link of  streanLink.links\">\n                    <td><a href=\"{{ link.link }}\">{{ link.link }}</a></td>\n                    <td>{{ link.description }}</td>\n                </tr>\n            </table>\n        </div>\n</ng-template>\n\n\n<ng-template #loadingTemplate>\n    <!--<img *ngIf=\"haveData == null\" src=\"sample.svg\" class=\"ld ld-surprise\"/>!-->\n    <div id=\"loading-bar-spinner\" class=\"spinner\"><div class=\"spinner-icon\"></div></div>\n</ng-template>\n<h4 *ngIf=\"haveData == false\">No available live now from Reddit</h4>\n"
+module.exports = "<div *ngIf=\"haveData  == null;then loadingTemplate else haveDataTemplate\"></div>\n\n<ng-template #haveDataTemplate>\n        <div *ngFor=\"let streanLink of  streamLinks\">\n            <h4>{{ streanLink.title }}</h4>\n            <hr>\n            <table>\n                <thead>\n                <th>Link</th>\n                <th>Description</th>\n                </thead>\n                <tr *ngFor=\"let link of  streanLink.links\">\n                    <td><a href=\"{{ link.link }}\">{{ link.link }}</a></td>\n                    <td>{{ link.description }}</td>\n                </tr>\n            </table>\n        </div>\n</ng-template>\n\n\n<ng-template #loadingTemplate>\n    <!--<img *ngIf=\"haveData == null\" src=\"sample.svg\" class=\"ld ld-surprise\"/>!-->\n    <div id=\"loading-bar-spinner\" class=\"spinner\"><div class=\"spinner-icon\"></div></div>\n</ng-template>\n<h4 *ngIf=\"haveData == false\">No available live now</h4>\n"
 
 /***/ }),
 
@@ -335,7 +335,7 @@ module.exports = "table, tr, td {\r\n  border: 1px solid grey;\r\n  border-colla
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"haveData  == null;then loadingTemplate else haveDataTemplate\"></div>\n\n<ng-template #haveDataTemplate>\n        <div *ngFor=\"let streanLink of  streamLinks\">\n            <h4>{{ streanLink.title }}</h4>\n            <hr>\n            <table>\n                <thead>\n                <th>Link</th>\n                <th>Description</th>\n                </thead>\n                <tr *ngFor=\"let link of  streanLink.links\">\n                    <td><a href=\"{{ link.link }}\">{{ link.link }}</a></td>\n                    <td>{{ link.description }}</td>\n                </tr>\n            </table>\n        </div>\n</ng-template>\n\n\n<ng-template #loadingTemplate>\n    <!--<img *ngIf=\"haveData == null\" src=\"sample.svg\" class=\"ld ld-surprise\"/>!-->\n    <div id=\"loading-bar-spinner\" class=\"spinner\"><div class=\"spinner-icon\"></div></div>\n</ng-template>\n<h4 *ngIf=\"haveData == false\">No available live now from Reddit</h4>\n"
+module.exports = "<div *ngIf=\"haveData  == null;then loadingTemplate else haveDataTemplate\"></div>\n\n<ng-template #haveDataTemplate>\n        <div *ngFor=\"let streanLink of  streamLinks\">\n            <h4>{{ streanLink.title }}</h4>\n            <hr>\n            <table>\n                <thead>\n                <th>Link</th>\n                <th>Description</th>\n                </thead>\n                <tr *ngFor=\"let link of  streanLink.links\">\n                    <td><a href=\"{{ link.link }}\">{{ link.link }}</a></td>\n                    <td>{{ link.description }}</td>\n                </tr>\n            </table>\n        </div>\n</ng-template>\n\n\n<ng-template #loadingTemplate>\n    <!--<img *ngIf=\"haveData == null\" src=\"sample.svg\" class=\"ld ld-surprise\"/>!-->\n    <div id=\"loading-bar-spinner\" class=\"spinner\"><div class=\"spinner-icon\"></div></div>\n</ng-template>\n<h4 *ngIf=\"haveData == false\">No available live now</h4>\n"
 
 /***/ }),
 
