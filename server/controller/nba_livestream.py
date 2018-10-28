@@ -13,17 +13,19 @@ class NbaPraw(Resource):
                          user_agent='stream-scraper')
 
     def get(self):
-        stream_list = {}
+        result_list = []
         for submission in NbaPraw.reddit.subreddit('nbastreams').hot(limit=20):
             if "GAME THREAD" in submission.title.upper():
-                stream_list[submission.title] = []
+                stream_list = {}
+                stream_list["title"] = submission.title
+                stream_list["links"] = []
                 for comments in submission.comments.list():
                     link_dict = self.extract_links_and_info(comments)
                     if link_dict:
-                        stream_list[submission.title].append(link_dict)
+                        stream_list["links"].append(link_dict)
                         # print(stream_list)
-
-        return stream_list
+                result_list.append(stream_list)
+        return result_list
 
     def extract_links_and_info(self, comments) -> {}:
         if isinstance(comments, comment.Comment):

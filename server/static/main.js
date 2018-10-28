@@ -145,12 +145,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var _football_service_football_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./football/service/football.service */ "./src/app/football/service/football.service.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _nba_service_nba_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./nba/service/nba.service */ "./src/app/nba/service/nba.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -179,7 +181,7 @@ var AppModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"]
             ],
-            providers: [_football_service_football_service__WEBPACK_IMPORTED_MODULE_8__["FootballService"]],
+            providers: [_football_service_football_service__WEBPACK_IMPORTED_MODULE_8__["FootballService"], _nba_service_nba_service__WEBPACK_IMPORTED_MODULE_10__["NbaService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         })
     ], AppModule);
