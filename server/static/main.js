@@ -248,14 +248,14 @@ var FootballComponent = /** @class */ (function () {
         console.log(this.streamLinks);
         this.streamLinksObs.subscribe(function (data) {
             console.log(data.length);
-            if (data.length != null) {
+            if (data.length != null && data.length != 0) {
                 _this.streamLinks = data;
                 _this.haveData = true;
             }
             else {
                 _this.haveData = false;
             }
-            console.log(_this.streamLinks);
+            console.log(_this.haveData);
         }, function (err) {
             console.error(err);
         }, function () {
@@ -375,7 +375,7 @@ var NbaComponent = /** @class */ (function () {
         this.streamLinksObs = this.nbaService.getStreamLinksFromAPI();
         console.log(this.streamLinks);
         this.streamLinksObs.subscribe(function (data) {
-            if (data.length != null) {
+            if (data.length != null && data.length != 0) {
                 _this.streamLinks = data;
                 _this.haveData = true;
             }
