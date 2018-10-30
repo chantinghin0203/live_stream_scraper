@@ -1,6 +1,11 @@
 from flask import Flask, render_template, Blueprint
 
-blueprint_ui = Blueprint("ui", __name__, url_prefix="/")
+blueprint_ui = Blueprint("ui", __name__)
+
+
+@blueprint_ui.route("/")
+def index():
+    return render_template("index.html")
 
 
 @blueprint_ui.route("/", defaults={"path": ""})
