@@ -48,8 +48,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 var routes = [
-    { path: "nba", component: _nba_nba_component__WEBPACK_IMPORTED_MODULE_2__["NbaComponent"] },
-    { path: "football", component: _football_football_component__WEBPACK_IMPORTED_MODULE_3__["FootballComponent"] }
+    { path: "", redirectTo: "football", pathMatch: 'full' },
+    { path: "football", component: _football_football_component__WEBPACK_IMPORTED_MODULE_3__["FootballComponent"] },
+    { path: "nba", component: _nba_nba_component__WEBPACK_IMPORTED_MODULE_2__["NbaComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -85,7 +86,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<nav mat-tab-nav-bar>\n    <a mat-tab-link [routerLink]=\"['nba']\" routerLinkActive #nba=\"routerLinkActive\" [active]=\"nba.isActive\">NBA</a>\n    <a mat-tab-link [routerLink]=\"['football']\" routerLinkActive #football=\"routerLinkActive\" [active]=\"football.isActive\">Football</a>\n</nav>\n\n\n<router-outlet>\n</router-outlet>\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<nav mat-tab-nav-bar>\n    <a mat-tab-link [routerLink]=\"['football']\" routerLinkActive #football=\"routerLinkActive\" [active]=\"football.isActive\">Football</a>\n    <a mat-tab-link [routerLink]=\"['nba']\" routerLinkActive #nba=\"routerLinkActive\" [active]=\"nba.isActive\">NBA</a>\n</nav>\n\n\n<router-outlet>\n</router-outlet>\n"
 
 /***/ }),
 
