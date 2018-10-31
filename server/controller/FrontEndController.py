@@ -7,8 +7,8 @@ blueprint_ui = Blueprint("ui", __name__)
 def index():
     return render_template("index.html")
 
-
-@blueprint_ui.route("/", defaults={"path": ""})
-@blueprint_ui.route("/<path:path>")
-def not_found(path):
-    return render_template("index.html")
+#
+# @blueprint_ui.route("/", defaults={"path": ""})
+# @blueprint_ui.route("/<path:path>")
+# def not_found(path):
+#     return render_template("index.html")
