@@ -4,9 +4,22 @@ from urllib.request import urlopen
 import praw
 from praw.models.reddit import comment
 from bs4 import BeautifulSoup
-from flask_restplus import Resource, Namespace
+from flask_restplus import Resource, Namespace, fields
+from flask import request
 
 ns_football = Namespace("football")
+
+parser = ns_football.parser()
+parser.add_argument('id', type=list, help='id name', location='query')
+
+
+@ns_football.route("/test")
+@ns_football.param('id', 'The task identifier')
+class test(Resource):
+    @ns_football.doc(parser=parser)
+    def get(self):
+        print(id)
+        return "HI"
 
 
 @ns_football.route('/get-stream-list')
@@ -46,7 +59,7 @@ class FootballPraw(Resource):
 
     def get(self):
         result_list = []
-        for submission in FootballPraw.reddit.subreddit('soccerstreams').hot(limit=20):
+        for submission in FootballPraw.reddit.subreddit('redsoccer').hot(limit=20):
             if "VS" in submission.title.upper():
                 stream_list = {}
                 stream_list["title"] = submission.title
@@ -59,7 +72,7 @@ class FootballPraw(Resource):
                 result_list.append(stream_list)
         return result_list
 
-    def extract_links_and_info(self, comments) -> {}:
+    def extract_links_and_info(self, comments: comment.Comment) -> {}:
         if isinstance(comments, comment.Comment):
             soup = BeautifulSoup(comments.body_html, "html.parser")
             stream_description = soup.find("p")
