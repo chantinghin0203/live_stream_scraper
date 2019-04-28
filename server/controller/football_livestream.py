@@ -59,7 +59,7 @@ class FootballPraw(Resource):
 
     def get(self):
         result_list = []
-        for submission in FootballPraw.reddit.subreddit('redsoccer').hot(limit=20):
+        for submission in FootballPraw.reddit.subreddit('SoccerLiveStream24').hot(limit=20):
             if "VS" in submission.title.upper():
                 stream_list = {}
                 stream_list["title"] = submission.title
